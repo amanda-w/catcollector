@@ -27,7 +27,8 @@ def index(request):
     return render(request, 'index.html', { 'cats': cats })
 
 def index(request):
-    return render(request, 'index.html', { 'cats': cats } )
+    cats = list(Cat.objects.all())
+    return render(request, 'index.html', {'cats': cats})
 
 def about(request):
     return render(request, 'about.html')
